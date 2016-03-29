@@ -1,13 +1,12 @@
 #!/bin/bash
 
-GithubUser="$1"
-GithubProject="$2"
-GithubURL="https://github.com/$GithubUser/$GithubProject"
+GitUser="$1"
+GitProject="$2"
+GitURL="https://github.com/$GitUser/$GitProject"
 TmpDirectory="./tmp"
-ProjectDirectory="$TmpDirectory/$GithubUser/$GithubProject"
+ProjectDirectory="$TmpDirectory/$GitUser/$GitProject"
 
-
-git clone "$GithubURL" "$ProjectDirectory"
+git clone "$GitURL" "$ProjectDirectory"
 cd "$ProjectDirectory"
 git pull
 ./gradlew clean
